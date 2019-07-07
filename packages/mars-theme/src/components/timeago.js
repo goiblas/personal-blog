@@ -10,11 +10,11 @@ const Timeago = ({ state, date }) => {
             <time pubdate="true" dateTime={ date.toString() }>{date.toString()}</time>
         )
     }
-    
+
     const { lang } = state.frontity.lang;
     const articleDate = new Date(date);
 
-    const rtf = new Window.Intl.RelativeTimeFormat( lang, { style: 'short' })
+    const rtf = new Intl.RelativeTimeFormat( lang, { style: 'short' })
     const diff = diffFromNow(date)
     const timeago = diff > -24
       ? rtf.format(diff, 'hours')
