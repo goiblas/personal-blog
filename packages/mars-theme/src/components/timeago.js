@@ -5,10 +5,16 @@ const diffFromNow = ts => Math.floor((ts - +Date.now()) / 1000 / 60 / 60)
 
 const Timeago = ({ state, date }) => {
 
+    if(typeof window == 'undefined') {
+        return (
+            <time pubdate="true" dateTime={ date.toString() }>{date.toString()}</time>
+        )
+    }
+    
     const { lang } = state.frontity.lang;
     const articleDate = new Date(date);
 
-    const rtf = new Intl.RelativeTimeFormat( lang, { style: 'short' })
+    const rtf = new Window.Intl.RelativeTimeFormat( lang, { style: 'short' })
     const diff = diffFromNow(date)
     const timeago = diff > -24
       ? rtf.format(diff, 'hours')
