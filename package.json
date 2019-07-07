@@ -1,0 +1,25 @@
+{
+  "name": "goitheme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "keywords": [
+    "frontity"
+  ],
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve",
+    "deploy": "npm run build && npx now"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/core": "^1.1.2",
+    "@frontity/html2react": "^1.1.7",
+    "@frontity/mars-theme": "./packages/mars-theme",
+    "@frontity/tiny-router": "^1.0.11",
+    "@frontity/wp-source": "^1.1.7",
+    "frontity": "^1.2.1",
+    "react-syntax-highlighter": "^11.0.1"
+  }
+}
