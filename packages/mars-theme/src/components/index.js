@@ -10,9 +10,9 @@ import Footer from "./footer";
 
 import globalCSS from './style.css';
 
+
 const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
-  const { layout }  = state.theme;
   
   return (
     <>
@@ -25,7 +25,7 @@ const Theme = ({ state }) => {
       </Head>
       <Global styles={css(globalCSS)} />
 
-      <div className={`layout ${layout}`}>
+      <div>
         <Header />
         <div className="content">
           <div className="container">

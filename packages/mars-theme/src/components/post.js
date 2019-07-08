@@ -26,7 +26,7 @@ const Post = ({ state, actions, libraries }) => {
 
         <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         {data.isPost && (
-          <p>Por {author.name} publicado el <Timeago date={date} /></p>
+          <Postdetails>Por {author.name} publicado el <Timeago date={date} /></Postdetails>
         )}
       {state.theme.featured.showOnPost && (
         <FeaturedMedia id={post.featured_media} />
@@ -38,9 +38,8 @@ const Post = ({ state, actions, libraries }) => {
 
 export default connect(Post);
 
-const Title = styled.h1`
-  margin: 0;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  color: rgba(12, 17, 43);
+const Postdetails = styled.p`
+  --margin-bottom: 1;
+  --fs-size: -1;
+  opacity: .7;
 `;

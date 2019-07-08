@@ -6,9 +6,13 @@ import Pagination from "./pagination";
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-
   return (
     <>
+      {/* If the list is a blog, we render a title. */}
+      {data.isPostArchive && (
+        <Title>Blog</Title>
+      )}
+
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
@@ -38,4 +42,9 @@ const Header = styled.h3`
   font-weight: 300;
   text-transform: capitalize;
   color: rgba(12, 17, 43, 0.9);
+`;
+const Title = styled.h1`
+  text-transform: uppercase;
+  --fs-size: 3;
+  opacity: .3;
 `;

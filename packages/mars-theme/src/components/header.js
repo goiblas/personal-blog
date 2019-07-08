@@ -1,17 +1,20 @@
 import React from "react";
-import { connect } from "frontity";
+import { connect, styled } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
 import Toggle from "./toggle";
 import photo from "../assets/gray-jesus.png";
 
-const Header = ({ state }) => (
-    <header className="header">
+const Header = ({ state }) => {
+    const { mode } = state.theme;
+
+    return (
+        <header className="header">
         <div className="header__container">
             <div className="logo">
               <Link link="/">
                   <div className="logo__image">
-                      <img src={photo} alt="" width="407" height="454" />
+                      <Photo src={photo} isDarkMode={ mode === 'dark'} alt="" width="407" height="454" />
                   </div>
                   <div className="logo__name">
                       {state.frontity.title}
@@ -23,8 +26,14 @@ const Header = ({ state }) => (
                 <Toggle />
             </div>
         </div>
-        
     </header>
-);
+    )
+};
 
 export default connect(Header);
+
+const Photo = styled.img`
+    filter: brightness(
+        ${({ isDarkMode }) => (isDarkMode ? ".8" : "1")}
+        );
+`;

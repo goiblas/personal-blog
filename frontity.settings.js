@@ -4,7 +4,7 @@ const settings = {
     "frontity": {
       "url": "goiblas.wordpress.com",
       "title": "Jesús Olazagoitia",
-      "description": "Blog personal",
+      "description": "",
       "lang": "es",
       "footer": "Desarrollado con Frontity y WordPress"
     }

@@ -20,19 +20,19 @@ const marsTheme = {
         showOnList: false,
         showOnPost: false
       }, 
-      layout:  ''
+      mode: 'light'
     }
   },
   actions: {
     theme: {
       beforeSSR: before,
       beforeCSR: before,
-      setVerticalLayout: ({state}) => {
-        state.theme.layout = 'vertical'
+      setLightMode: ({state}) => {
+        state.theme.mode = 'light';
       },
-      setHorizontalLayout: ({state}) => {
-        state.theme.layout = 'horizontal'
-      },
+      setDarkMode: ({state}) => {
+        state.theme.mode = 'dark';
+      }
     }
   }
 };

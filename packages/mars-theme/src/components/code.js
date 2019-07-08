@@ -26,5 +26,4 @@ const getLanguage = (classes = '') => {
 }
 const Container = styled.div`
     overflow: auto;
-    width:calc(100vw -  40px);
 `;
