@@ -6,9 +6,7 @@ const diffFromNow = ts => Math.floor((ts - +Date.now()) / 1000 / 60 / 60)
 const Timeago = ({ state, date }) => {
 
     if(typeof window == 'undefined') {
-        return (
-            <time pubdate="true" dateTime={ date.toString() }>{date.toString()}</time>
-        )
+        return ''
     }
 
     const { lang } = state.frontity.lang;

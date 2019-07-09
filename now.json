@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "alias": ["goiblas.com"],
     "builds": [
       {
         "src": "build/static/**/*",

@@ -46,5 +46,4 @@ const Header = styled.h3`
 const Title = styled.h1`
   text-transform: uppercase;
   --fs-size: 3;
-  opacity: .3;
 `;

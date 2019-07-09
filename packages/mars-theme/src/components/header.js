@@ -10,23 +10,23 @@ const Header = ({ state }) => {
 
     return (
         <header className="header">
-        <div className="header__container">
-            <div className="logo">
-              <Link link="/">
-                  <div className="logo__image">
-                      <Photo src={photo} isDarkMode={ mode === 'dark'} alt="" width="407" height="454" />
-                  </div>
-                  <div className="logo__name">
-                      {state.frontity.title}
-                  </div>
-              </Link>
+            <div className="header__container">
+                <div className="logo">
+                <Link link="/">
+                    <div className="logo__image">
+                        <Photo src={photo} isDarkMode={ mode === 'dark'} alt="" width="407" height="454" />
+                    </div>
+                    <div className="logo__name">
+                        {state.frontity.title}
+                    </div>
+                </Link>
+                </div>
+                <Nav />
+                <div className="toggle-layout" aria-hidden="true">  
+                    <Toggle />
+                </div>
             </div>
-            <Nav />
-            <div className="toggle-layout" aria-hidden="true">  
-                <Toggle />
-            </div>
-        </div>
-    </header>
+        </header>
     )
 };
 
