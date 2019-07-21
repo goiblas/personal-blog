@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "./link";
+import Link from "./utils/link";
 import List from "./list";
-import FeaturedMedia from "./featured-media";
-import Timeago from "./timeago";
 
 const Post = ({ state, actions, libraries }) => {
   // Get info of current post.
@@ -11,9 +9,10 @@ const Post = ({ state, actions, libraries }) => {
   // Get the the post.
   const post = state.source[data.type][data.id];
   // Get the author.
-  const author = state.source.author[post.author];
+  const { author } = state.frontity;
   // Get a date for humans.
   const date = new Date(post.date);
+  const dateFormatted = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
 
   // Prefetch home posts and the list component.
   useEffect(() => {
@@ -22,24 +21,21 @@ const Post = ({ state, actions, libraries }) => {
   }, []);
 
   return data.isReady ? (
-    <>
-
+    <div className="entry-content">
         <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         {data.isPost && (
-          <Postdetails>Por {author.name} publicado el <Timeago date={date} /></Postdetails>
+          <Postdetails>
+            Por <Link link={author.link} rel="me nofollow"> {author.name}</Link>  el <time dateTime={date.toLocaleDateString('en-US')}>{dateFormatted}</time>
+          </Postdetails>
         )}
-      {state.theme.featured.showOnPost && (
-        <FeaturedMedia id={post.featured_media} />
-      )}
         <libraries.html2react.Component html={post.content.rendered} />
-    </>
+    </div>
   ) : null;
 };
 
 export default connect(Post);
 
 const Postdetails = styled.p`
-  --margin-bottom: 1;
-  --fs-size: -1;
-  opacity: .7;
+  --margin-bottom: 2;
+  color: var(--color-text-light);
 `;

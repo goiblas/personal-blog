@@ -5,7 +5,7 @@ const Page404 = () => (
   <Container>
     <Title>Oops! 404</Title>
     <Description>
-      That page can’t be found{" "}
+      Página no encontrada{" "}
       <span role="img" aria-label="confused face">
         😕
       </span>
@@ -16,7 +16,8 @@ const Page404 = () => (
 export default Page404;
 
 const Container = styled.div`
-  --padding-y: 4;
+  --padding-top: 3;
+  --padding-bottom: 1;
   text-align: center;
 `;
 

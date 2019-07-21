@@ -16,10 +16,6 @@ const marsTheme = {
   state: {
     theme: {
       menu: [], 
-      featured: {
-        showOnList: false,
-        showOnPost: false
-      }, 
       mode: 'light'
     }
   },

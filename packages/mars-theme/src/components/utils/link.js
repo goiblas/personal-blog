@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "frontity";
 
-const Link = ({ actions, link, className, children }) => {
+const Link = ({ actions, link, className, children, id, ariaLabelledby, rel }) => {
+
   const onClick = event => {
     event.preventDefault();
     // Set the router to the new url.
@@ -10,7 +11,7 @@ const Link = ({ actions, link, className, children }) => {
   };
 
   return (
-    <a href={link} onClick={onClick} className={className}>
+    <a rel={rel} id={id} aria-labelledby={ariaLabelledby} href={link} onClick={onClick} className={className}>
       {children}
     </a>
   );

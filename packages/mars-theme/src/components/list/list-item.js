@@ -1,37 +1,42 @@
 import React from "react";
+
 import { connect, styled } from "frontity";
-import Link from "../link";
-import FeaturedMedia from "../featured-media";
-import Timeago from "../timeago";
+import Link from "../utils/link";
+import nextId from "react-id-generator";
 
 const Item = ({ state, item }) => {
-  const author = state.source.author[item.author];
+
+  const { author } = state.frontity;
   const date = new Date(item.date);
+  const dateFormatted = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+  const excerptWithoutParragraph = item.excerpt.rendered.replace(/<\/?p>/g,''); 
+  const excerptPlain = excerptWithoutParragraph.replace('[&hellip;]', '&hellip; '); 
+  
+  const titleId  = nextId('title-');
+  const readmoreId  = nextId('readmore-');
 
   return (
     <Article>
-      <Titlelink link={item.link}>
-        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Titlelink>
+      <Link link={item.link}>
+        <Title id={titleId} dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+      </Link>
       <Postdetails>
-        Por {author.name} publicado el <Timeago date={date} />
+        Por <Link link={author.link} rel="me nofollow"> {author.name}</Link>  el <time dateTime={date.toLocaleDateString('en-US')}>{dateFormatted}</time>
       </Postdetails>
-
-      {state.theme.featured.showOnList && (
-        <FeaturedMedia id={item.featured_media} />
-      )}
-      <div dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
+      <p>
+        <span dangerouslySetInnerHTML={{__html: excerptPlain} } />
+        <Link link={item.link} id={readmoreId} ariaLabelledby={readmoreId + ' ' + titleId }>Leer&nbsp;más</Link>
+      </p>
     </Article>
   );
 };
 
 export default connect(Item);
 
-
 const Postdetails = styled.p`
   --margin-bottom: 1;
-  --fs-size: -1;
-  opacity: .7;
+  --font-size: -.3;
+  color: var(--color-text-light);
 `;
 
 const Title = styled.h2`
@@ -42,6 +47,3 @@ const Article = styled.article`
   --margin-bottom: 3;
 `;
 
-const Titlelink = styled(Link)`
-  text-decoration:none;
-`;
