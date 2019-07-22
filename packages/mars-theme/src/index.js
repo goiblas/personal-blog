@@ -3,7 +3,6 @@ import image from "@frontity/html2react/processors/image";
 import code from './components/code';
 
 const before = ({ libraries }) => {
-  // We use html2react to process the <img> tags inside the content HTML.
   libraries.html2react.processors.push(image);
   libraries.html2react.processors.push(code);
 };
