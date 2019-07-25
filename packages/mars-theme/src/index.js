@@ -22,11 +22,17 @@ const marsTheme = {
     theme: {
       beforeSSR: before,
       beforeCSR: before,
+      afterCSR: ({ actions }) => {
+        if (window.localStorage.getItem('mode') === 'dark')
+          actions.theme.setDarkMode();
+      },
       setLightMode: ({state}) => {
         state.theme.mode = 'light';
+        window.localStorage.setItem('mode', 'light');
       },
       setDarkMode: ({state}) => {
         state.theme.mode = 'dark';
+        window.localStorage.setItem('mode', 'dark');
       }
     }
   }
