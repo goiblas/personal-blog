@@ -56,6 +56,7 @@ const ContainerMobile = styled.div`
 const Container = styled.header`
     background-color: var(--background-brand);
     box-shadow: var(--shadow-sm);
+    transition: background-color 500ms;
 
     .logo {
         --margin-right: 2;

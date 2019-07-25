@@ -31,6 +31,7 @@ const Wrapper = styled.section`
     --padding-top: 0;
     --padding-bottom: 2;
     background-color: var(--background-brand-dark);
+    transition: background-color 500ms;
 `;
 
 const Title = styled.h1`
