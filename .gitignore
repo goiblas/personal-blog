@@ -93,6 +93,3 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
-
-# Remove dist folder
-build/
