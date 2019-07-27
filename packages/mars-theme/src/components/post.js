@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "./utils/link";
 import List from "./list";
+import Comments from './comments';
 
 const Post = ({ state, actions, libraries }) => {
   // Get info of current post.
@@ -13,8 +14,8 @@ const Post = ({ state, actions, libraries }) => {
   // Get a date for humans.
   const date = new Date(post.date);
   const dateFormatted = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
-
   // Prefetch home posts and the list component.
+
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
@@ -29,6 +30,8 @@ const Post = ({ state, actions, libraries }) => {
           </Postdetails>
         )}
         <libraries.html2react.Component html={post.content.rendered} />
+
+        {data.isPost && ( <Comments post={post} /> ) }
     </div>
   ) : null;
 };
