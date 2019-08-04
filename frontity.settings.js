@@ -23,7 +23,7 @@ const settings = {
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "frontity-goiblas-blog",
       "state": {
         "theme": {
           "menu": [

@@ -1,5 +1,5 @@
 {
-  "name": "goiblas-blog-theme",
+  "name": "frontity-goiblas-blog",
   "version": "1.0.0",
   "description": "A theme blog Jesús Olazagoitia",
   "keywords": [
@@ -13,6 +13,10 @@
     "@frontity/components": "^1.1.5",
     "@frontity/html2react": "^1.1.5",
     "frontity": "^1.1.0",
-    "react-spinners": "^0.5.4"
+    "react-spinners": "^0.5.4",
+    "disqus-react": "^1.0.6",
+    "react-disqus-thread": "^0.4.0",
+    "react-id-generator": "^2.0.0",
+    "super-react-gist": "^1.0.4"
   }
 }
