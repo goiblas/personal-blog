@@ -41,6 +41,6 @@ const Postdetails = styled.p`
 `;
 
 const Title = styled.h1`
-  --margin-top: 2;
+  --margin-top: 1;
   --margin-bottom: .5;
 `
