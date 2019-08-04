@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "./utils/link";
+
+import DateFormat from "./utils/date";
 import List from "./list";
 import Comments from './comments';
 
@@ -9,13 +10,8 @@ const Post = ({ state, actions, libraries }) => {
   const data = state.source.get(state.router.link);
   // Get the the post.
   const post = state.source[data.type][data.id];
-  // Get the author.
-  const { author } = state.frontity;
-  // Get a date for humans.
-  const date = new Date(post.date);
-  const dateFormatted = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
-  // Prefetch home posts and the list component.
 
+  // Prefetch home posts and the list component.
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
@@ -23,15 +19,17 @@ const Post = ({ state, actions, libraries }) => {
 
   return data.isReady ? (
     <div className="entry-content">
-        <h1 dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         {data.isPost && (
           <Postdetails>
-            Por <Link link={author.link} rel="me nofollow"> {author.name}</Link>  el <time dateTime={date.toLocaleDateString('en-US')}>{dateFormatted}</time>
+            <DateFormat date={ post.date } />
           </Postdetails>
         )}
         <libraries.html2react.Component html={post.content.rendered} />
-
-        {data.isPost && ( <Comments post={post} /> ) }
+        {data.isPost 
+            && typeof window !== "undefined"
+            && ( <Comments post={post} /> )
+         }
     </div>
   ) : null;
 };
@@ -40,5 +38,9 @@ export default connect(Post);
 
 const Postdetails = styled.p`
   --margin-bottom: 2;
-  color: var(--color-text-light);
 `;
+
+const Title = styled.h1`
+  --margin-top: 2;
+  --margin-bottom: .5;
+`

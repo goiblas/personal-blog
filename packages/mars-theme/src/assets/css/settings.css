@@ -57,7 +57,7 @@
     }
 }
 
-* {
+ * {
     font-size: calc( var(--base) + (var(--base) * var(--scale-factor) * var(--font-size, 0)));
     line-height: calc( var(--space) * var(--line-height, 1));
     margin-top: calc( var(--space) * var(--margin-top, 0));

@@ -1,10 +1,10 @@
 import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
-import code from "./processors/code";
+import gistCode from "./processors/gist-code";
 
 const before = ({ libraries }) => {
   libraries.html2react.processors.push(image);
-  libraries.html2react.processors.push(code);
+  libraries.html2react.processors.push(gistCode);
 };
 
 const marsTheme = {

@@ -2,13 +2,15 @@ import React from "react";
 
 import { connect, styled } from "frontity";
 import Link from "../utils/link";
+import DateFormat from "../utils/date";
 import nextId from "react-id-generator";
 
 const Item = ({ state, item }) => {
 
   const { author } = state.frontity;
   const date = new Date(item.date);
-  const dateFormatted = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+  const dateFormatted = `${date.getDate()} / ${date.getMonth()} / ${date.getFullYear()}`
+
   const excerptWithoutParragraph = item.excerpt.rendered.replace(/<\/?p>/g,''); 
   const excerptPlain = excerptWithoutParragraph.replace('[&hellip;]', '&hellip; '); 
   
@@ -21,7 +23,7 @@ const Item = ({ state, item }) => {
         <Title id={titleId} dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
       <Postdetails>
-        Por <Link link={author.link} rel="me nofollow"> {author.name}</Link>  el <time dateTime={date.toLocaleDateString('en-US')}>{dateFormatted}</time>
+        <DateFormat date={item.date} />
       </Postdetails>
       <p>
         <span dangerouslySetInnerHTML={{__html: excerptPlain} } />
@@ -35,8 +37,6 @@ export default connect(Item);
 
 const Postdetails = styled.p`
   --margin-bottom: 1;
-  --font-size: -.3;
-  color: var(--color-text-light);
 `;
 
 const Title = styled.h2`

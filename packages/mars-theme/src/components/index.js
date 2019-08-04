@@ -23,8 +23,7 @@ const Theme = ({ state }) => {
         <title>{state.frontity.title}</title>
         <meta name="description" content={state.frontity.description} />
         <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600&display=swap" rel="stylesheet" />
-        <script id="dsq-count-scr" src="https://goiblas.disqus.com/count.js"
-        onLoad={()=> console.log('he cargado')} async /> 
+        <script id="dsq-count-scr" src="https://goiblas.disqus.com/count.js" async /> 
       </Head>
       <Global styles={css(settingsCSS)} />
       <Global styles={css(globalCSS)} />

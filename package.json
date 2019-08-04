@@ -23,6 +23,7 @@
     "frontity": "^1.2.2",
     "react-disqus-thread": "^0.4.0",
     "react-id-generator": "^2.0.0",
-    "react-syntax-highlighter": "^11.0.2"
+    "react-syntax-highlighter": "^11.0.2",
+    "super-react-gist": "^1.0.4"
   }
 }

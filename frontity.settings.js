@@ -47,8 +47,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://public-api.wordpress.com/wp/v2/sites/goiblas.wordpress.com",
-          "isWPCom": true
+          "api": "https://horus.online/wp-json/",
+          "isWPCom": false
         }
       }
     },

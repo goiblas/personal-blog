@@ -10,6 +10,10 @@ body {
     transition: background-color 500ms;
 }
 
+*  {
+    box-sizing: border-box;
+}
+
 a {
     color: currentColor;
     text-decoration: none;
@@ -31,7 +35,15 @@ pre code {
     background-color: initial;
 }
 
-p, ul, ol {
+pre {
+    background-color: var( --background-brand-dark);
+    --padding-top: .5;
+    --padding-bottom: .5;
+    --padding-right: .5;
+    --padding-left: .5;    
+}
+
+p, ul, ol, pre {
     --margin-bottom: 1;
 }
 ul, ol {
@@ -159,3 +171,12 @@ img {
       --margin-right: 2;
     }
   }
+
+/* Gist Github code */
+.gist .highlight * {
+    font-size: inherit;
+    line-height: inherit;
+}
+.gist-meta * {
+    font-size: inherit;
+} 
