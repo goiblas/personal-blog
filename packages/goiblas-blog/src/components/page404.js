@@ -1,17 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { styled } from "frontity";
 
-const Page404 = () => (
-  <Container>
-    <Title>Oops! 404</Title>
-    <Description>
-      Página no encontrada{" "}
-      <span role="img" aria-label="confused face">
-        😕
-      </span>
-    </Description>
-  </Container>
-);
+const Page404 = () => {
+
+  const titleEl = useRef(null);
+  const { focusOnChange } = state.theme;
+
+  useEffect(() => {
+    if(focusOnChange) {
+      titleEl.current.focus();
+    }
+  }, []);
+
+
+  return (
+    <Container>
+      <Title ref={titleEl} tabIndex="-1">Oops! 404</Title>
+      <Description>
+        Página no encontrada{" "}
+        <span role="img" aria-label="confused face">
+          😕
+        </span>
+      </Description>
+    </Container>
+    );
+};
 
 export default Page404;
 

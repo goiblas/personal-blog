@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { connect, styled } from "frontity";
 import Link from "../utils/link";
 import { inDesktop } from '../utils/media-queries';
 import { Logo } from '../utils/icons';
 
 const Hero = ({state}) => {
-    const { hero } = state.frontity;
-    const { content, cta } = hero; 
+  const { hero } = state.frontity;
+  const { content, cta } = hero; 
+
+  // Focus onChange page
+  const titleEl = useRef(null);
+  const { focusOnChange } = state.theme;
+
+  useEffect(()=> {
+    if(titleEl.current && focusOnChange) {
+      titleEl.current.focus();
+    }
+  });
+
   return (
     <Wrapper>
         <Container>
@@ -15,7 +26,7 @@ const Hero = ({state}) => {
                     <Logo />
                 </Link>
             </LogoMobile>
-            <Title>{content}</Title>
+            <Title tabIndex="-1" ref={titleEl}>{content}</Title>
             <p><Cta link={cta.link} className="link">{cta.content}</Cta></p>
         </Container>
     </Wrapper>

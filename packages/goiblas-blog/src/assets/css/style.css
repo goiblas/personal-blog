@@ -14,6 +14,10 @@ body {
     box-sizing: border-box;
 }
 
+[tabIndex="-1"] {
+    outline: 0;
+}
+
 a {
     color: currentColor;
     text-decoration: none;

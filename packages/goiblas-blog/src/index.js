@@ -15,7 +15,8 @@ const marsTheme = {
   state: {
     theme: {
       menu: [], 
-      mode: 'light'
+      mode: 'light',
+      focusOnChange: false
     }
   },
   actions: {
@@ -25,6 +26,9 @@ const marsTheme = {
       afterCSR: ({ actions }) => {
         if (window.localStorage.getItem('mode') === 'dark')
           actions.theme.setDarkMode();
+      },
+      setFocusOnChange: ({ state }) => {
+        state.theme.focusOnChange = true;
       },
       setLightMode: ({state}) => {
         state.theme.mode = 'light';

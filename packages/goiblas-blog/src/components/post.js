@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useImperativeHandle } from "react";
 import { connect, styled } from "frontity";
 
 import DateFormat from "./utils/date";
@@ -6,6 +6,7 @@ import List from "./list";
 import Comments from './comments';
 
 const Post = ({ state, actions, libraries }) => {
+
   // Get info of current post.
   const data = state.source.get(state.router.link);
   // Get the the post.
@@ -17,9 +18,19 @@ const Post = ({ state, actions, libraries }) => {
     List.preload();
   }, []);
 
+  // Focus onChange page
+  const titleEl = useRef(null);
+  const { focusOnChange } = state.theme;
+
+  useEffect(()=> {
+    if(titleEl.current && focusOnChange) {
+      titleEl.current.focus();
+    }
+  });
+
   return data.isReady ? (
     <div className="entry-content">
-        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        <Title ref={titleEl} tabIndex="-1" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
         {data.isPost && (
           <Postdetails>
             <DateFormat date={ post.date } />
