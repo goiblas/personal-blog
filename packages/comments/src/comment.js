@@ -1,7 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Disqus from 'disqus-react';
-import { inMobile } from './utils/media-queries';
 
 const Comments = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -15,8 +14,7 @@ const Comments = ({ state }) => {
         title: post.title.rendered,
     };
 
-
-    if(typeof window !== "undefined" ) {
+    if(state.frontity.platform === 'client') {
         return (
             <>
                 <Container>
@@ -34,7 +32,7 @@ const Container = styled.div`
     --margin-top: 3;
     --padding-bottom: 2;
 
-    ${inMobile} {
+    @media ( max-width: 800px) {
         margin-bottom: var(--header-height);
     }
 `

@@ -1,0 +1,19 @@
+{
+    "name": "goiblas-disqus-comments",
+    "version": "1.0.0",
+    "description": "Comments of blog Jesús Olazagoitia",
+    "keywords": [
+      "comments"
+    ],
+    "license": "Apache-2.0",
+    "publishConfig": {
+      "access": "public"
+    },
+    "dependencies": {
+      "@frontity/components": "^1.1.7",
+      "@frontity/html2react": "^1.1.5",
+      "frontity": "^1.1.1",
+      "disqus-react": "^1.0.6"
+    }
+  }
+  

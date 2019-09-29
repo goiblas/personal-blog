@@ -14,7 +14,6 @@
     "@frontity/html2react": "^1.1.5",
     "frontity": "^1.1.1",
     "react-spinners": "^0.5.4",
-    "disqus-react": "^1.0.6",
     "react-id-generator": "^2.0.0",
     "super-react-gist": "^1.0.4"
   }

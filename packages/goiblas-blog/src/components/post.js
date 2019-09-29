@@ -3,7 +3,6 @@ import { connect, styled } from "frontity";
 
 import DateFormat from "./utils/date";
 import List from "./list";
-import Comments from './comments';
 
 const Post = ({ state, actions, libraries }) => {
 
@@ -37,10 +36,8 @@ const Post = ({ state, actions, libraries }) => {
           </Postdetails>
         )}
         <libraries.html2react.Component html={post.content.rendered} />
-        {data.isPost 
-            && typeof window !== "undefined"
-            && ( <Comments post={post} /> )
-         }
+        { data.isPost && libraries.comments && <libraries.comments.Comment /> }
+
     </div>
   ) : null;
 };

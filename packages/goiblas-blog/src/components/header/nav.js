@@ -23,7 +23,8 @@ const Item = styled(Link)`
     font-size: 11px;
     font-family: var(--system-family);
     text-decoration: none;
-    letter-spacing: .05em;
+    letter-spacing: .06em;
+    font-weight: 600;
     text-transform: uppercase;
     line-height: var(--header-height);
     position: relative;
