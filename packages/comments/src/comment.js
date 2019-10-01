@@ -16,11 +16,9 @@ const Comments = ({ state }) => {
 
     if(state.frontity.platform === 'client') {
         return (
-            <>
-                <Container>
-                    <Disqus.DiscussionEmbed shortname={disqusShortname} config={threadConfig} />
-                </Container>
-            </>
+            <Container>
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={threadConfig} />
+            </Container>
         )
     } else {
         return null;

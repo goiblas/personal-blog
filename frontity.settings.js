@@ -32,11 +32,11 @@ const settings = {
               "/"
             ],
             [
-              "Projectos",
+              "Proyectos",
               "/proyectos/"
             ],
             [
-              "Sobre mi",
+              "Sobre mí",
               "/sobre-mi/"
             ]
           ]
@@ -48,7 +48,6 @@ const settings = {
       "state": {
         "source": {
           "api": "https://horus.online/wp-json/",
-          "isWPCom": false
         }
       }
     },

@@ -11,7 +11,7 @@ import settingsCSS from './../assets/css/settings.css';
 import globalCSS from './../assets/css/style.css';
 
 
-const Theme = ({ state, libraries }) => {
+const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   const showList = data.isArchive && !data.isCategory; 
