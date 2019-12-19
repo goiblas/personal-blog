@@ -10,10 +10,10 @@
       "access": "public"
     },
     "dependencies": {
-      "@frontity/components": "^1.1.7",
-      "@frontity/html2react": "^1.1.5",
-      "frontity": "^1.1.1",
-      "disqus-react": "^1.0.6"
+      "@frontity/components": "^1.1.15",
+      "@frontity/html2react": "^1.1.15",
+      "@frontity/hooks": "^1.1.14",
+      "disqus-react": "^1.0.7"
     }
   }
   

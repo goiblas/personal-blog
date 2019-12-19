@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useImperativeHandle } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect, styled } from "frontity";
 
 import DateFormat from "./utils/date";
