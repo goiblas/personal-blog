@@ -1,0 +1,139 @@
+import { css } from "frontity";
+import ApercuBold from './../../assets/fonts/apercu/Apercu-Bold.woff2';
+import PoppinsLight from './../../assets/fonts/poppins/Poppins-Light.woff2';
+import PoppinsLightItalic from './../../assets/fonts/poppins/Poppins-Light.woff2';
+import PoppinsRegular from './../../assets/fonts/poppins/Poppins-Regular.woff2';
+import PoppinsRegularItalic from './../../assets/fonts/poppins/Poppins-Italic.woff2';
+import PoppinsRegularMedium from './../../assets/fonts/poppins/Poppins-Medium.woff2';
+import PoppinsRegularSemibold from './../../assets/fonts/poppins/Poppins-SemiBold.woff2';
+
+const HEADER_FONT_FAMILY = 'Apercu Bold';
+const BODY_FONT_FAMILY = 'Poppins';
+
+const fontFaceHeader = css `
+    @font-face {
+        font-family: ${HEADER_FONT_FAMILY};
+        font-style: normal;
+        font-weight: 700;
+        font-display: optional;
+        src: url(${ApercuBold}) format("woff2");
+    }
+`;
+
+const fontFaceBody = css`
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsLight} ) format('woff2');
+        font-weight: 300;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsLightItalic} ) format('woff2');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsRegular} ) format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsRegularItalic} ) format('woff2');
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsRegularMedium} ) format('woff2');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: ${BODY_FONT_FAMILY};
+        src: url( ${PoppinsRegularSemibold} ) format('woff2');
+        font-weight: 600;
+        font-style: italic;
+    }
+`;
+
+const settings = css `    
+:root {
+    //  TYPOGRAFY & RHYTHM
+    --base: 13px;
+    --scale-factor: .24;
+    --space: 24px;
+    
+    // FONT FAMILY
+    --system-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --header-family: ${HEADER_FONT_FAMILY}, Times, var(--system-family);
+    --body-family: ${BODY_FONT_FAMILY}, var(--system-family);
+    --code-family: monospace;
+    
+    // COLORS
+    --color-brand: #30d2f1;
+    --color-brand-light: #b1eaf5;
+    --color-text: rgba(0, 0, 3, 0.8);
+    --color-text-light: rgba(0, 0, 3, 0.54);
+    --color-border: #E1E5E8;
+
+    --background-brand: #ffffff;
+    --background-brand-dark: #f2f3f5;
+    
+    // LAYOUT
+    --container-percentage: 92%;
+    --container-wide: 1180px;
+    --container-normal: 720px;
+    --header-height: 60px;
+
+    // SHADOW
+    --shadow-color: rgba(17, 17, 17, 0.2);
+    --shadow-sm: var(--shadow-color) 0 0 2px;
+
+    // SELECTION
+    --selection: #FFE7AF;
+}
+
+@media (min-width: 600px) {
+    :root {
+        --base: 15px;
+    }
+}
+
+@media (min-width: 880px) {
+    :root {
+        --base: 16px;
+        --scale-factor: .48;
+        --space: 29px;
+    }
+}
+
+ * {
+    font-size: calc( var(--base) + (var(--base) * var(--scale-factor) * var(--font-size, 0)));
+    line-height: calc( var(--space) * var(--line-height, 1));
+    margin-top: calc( var(--space) * var(--margin-top, 0));
+    margin-bottom: calc( var(--space) * var(--margin-bottom, 0));
+    margin-left: calc( var(--space) * var(--margin-left, 0));
+    margin-right: calc( var(--space) * var(--margin-right, 0));
+    padding-top: calc( var(--space) * var(--padding-top, 0));
+    padding-bottom: calc( var(--space) * var(--padding-bottom, 0));
+    padding-left: calc( var(--space) * var(--padding-left, 0));
+    padding-right: calc( var(--space) * var(--padding-right, 0)); }
+
+* * {
+    --margin-top: initial;
+    --margin-bottom: initial;
+    --margin-left: initial;
+    --margin-right: initial;
+    --padding-top: initial;
+    --padding-bottom: initial;
+    --padding-left: initial;
+    --padding-right: initial; }
+`;
+export default css([fontFaceHeader, fontFaceBody, settings]);

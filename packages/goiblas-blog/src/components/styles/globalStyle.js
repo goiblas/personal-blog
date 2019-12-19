@@ -1,4 +1,6 @@
+import { css } from "frontity";
 
+const globalStyle = css`
 body {
     font-family: var(--body-family);
     text-rendering: optimizeLegibility;
@@ -96,7 +98,7 @@ h2 {
     max-width: var(--container-wide);
 }
 
-/* LINK */
+// LINK 
 .link,
 .entry-content a  {
     font-weight: 500;
@@ -123,7 +125,7 @@ h2 {
     background-color: var(--selection); 
 }
 
-/* WORDPRESS */
+// WORDPRESS 
 .aligncenter {
     text-align: center;
 }
@@ -151,7 +153,7 @@ img {
     margin: auto;
   }
 
-  /* WordPress Core Align Classes */
+//   WordPress Core Align Classes 
   @media (min-width: 420px) {
     img.aligncenter,
     img.alignleft,
@@ -176,7 +178,7 @@ img {
     }
   }
 
-/* Gist Github code */
+// Gist Github code 
 .gist .highlight * {
     font-size: inherit;
     line-height: inherit;
@@ -184,3 +186,7 @@ img {
 .gist-meta * {
     font-size: inherit;
 } 
+`;
+
+
+export default globalStyle;
