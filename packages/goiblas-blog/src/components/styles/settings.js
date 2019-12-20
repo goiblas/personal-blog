@@ -72,7 +72,7 @@ const settings = css `
     
     // FONT FAMILY
     --system-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --header-family: ${HEADER_FONT_FAMILY}, Times, var(--system-family);
+    --header-family: ${HEADER_FONT_FAMILY}, var(--system-family);
     --body-family: ${BODY_FONT_FAMILY}, var(--system-family);
     --code-family: monospace;
     

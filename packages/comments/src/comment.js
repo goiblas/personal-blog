@@ -19,7 +19,7 @@ const Comments = ({ state }) => {
         title: post.title.rendered,
     };
 
-    const [isVisible, ref] = useInView({ rootMargin: "-600px" });
+    const [isVisible, ref] = useInView({ rootMargin: "600px" });
 
     return (
         <Container ref={ref}> 
