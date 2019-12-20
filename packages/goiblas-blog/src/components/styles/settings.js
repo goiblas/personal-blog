@@ -1,14 +1,18 @@
 import { css } from "frontity";
 import ApercuBold from './../../assets/fonts/apercu/Apercu-Bold.woff2';
-import PoppinsLight from './../../assets/fonts/poppins/Poppins-Light.woff2';
-import PoppinsLightItalic from './../../assets/fonts/poppins/Poppins-Light.woff2';
-import PoppinsRegular from './../../assets/fonts/poppins/Poppins-Regular.woff2';
-import PoppinsRegularItalic from './../../assets/fonts/poppins/Poppins-Italic.woff2';
-import PoppinsRegularMedium from './../../assets/fonts/poppins/Poppins-Medium.woff2';
-import PoppinsRegularSemibold from './../../assets/fonts/poppins/Poppins-SemiBold.woff2';
+import PublicSans from './../../assets/fonts/public-sans/Public-Sans-Roman-VF.woff2';
 
 const HEADER_FONT_FAMILY = 'Apercu Bold';
-const BODY_FONT_FAMILY = 'Poppins';
+const BODY_FONT_FAMILY = 'Public Sans';
+
+const fontFaceBody = css`
+@font-face {
+    font-family: ${BODY_FONT_FAMILY};
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(${PublicSans}) format("woff2-variations");
+} 
+`;
 
 const fontFaceHeader = css `
     @font-face {
@@ -20,55 +24,12 @@ const fontFaceHeader = css `
     }
 `;
 
-const fontFaceBody = css`
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsLight} ) format('woff2');
-        font-weight: 300;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsLightItalic} ) format('woff2');
-        font-weight: 300;
-        font-style: italic;
-    }
-
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsRegular} ) format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsRegularItalic} ) format('woff2');
-        font-weight: normal;
-        font-style: italic;
-    }
-
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsRegularMedium} ) format('woff2');
-        font-weight: 500;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: ${BODY_FONT_FAMILY};
-        src: url( ${PoppinsRegularSemibold} ) format('woff2');
-        font-weight: 600;
-        font-style: italic;
-    }
-`;
-
 const settings = css `    
 :root {
     //  TYPOGRAFY & RHYTHM
     --base: 13px;
     --scale-factor: .24;
-    --space: 24px;
+    --space: 21px;
     
     // FONT FAMILY
     --system-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -110,7 +71,7 @@ const settings = css `
     :root {
         --base: 16px;
         --scale-factor: .48;
-        --space: 29px;
+        --space: 26px;
     }
 }
 
@@ -136,4 +97,4 @@ const settings = css `
     --padding-left: initial;
     --padding-right: initial; }
 `;
-export default css([fontFaceHeader, fontFaceBody, settings]);
+export default css([ fontFaceHeader, fontFaceBody, settings ]);

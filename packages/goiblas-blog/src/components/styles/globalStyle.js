@@ -30,7 +30,7 @@ img {
     vertical-align: middle;
 }
 strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 code {
     background-color: var( --background-brand-dark);
