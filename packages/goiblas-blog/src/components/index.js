@@ -6,6 +6,7 @@ import Post from "./post";
 import Page404 from "./page404.js";
 import Loading from "./utils/loading";
 import Footer from "./footer";
+import PageMetaTitle from "./page-meta-title";
 
 import settingsCSS from './styles/settings';
 import globalCSS from './styles/globalStyle';
@@ -20,14 +21,14 @@ const Theme = ({ state }) => {
 
   ReactGA.set({ page: state.router.link });
   ReactGA.pageview(state.router.link);
-  
+
   return (
     <>
-      <Head>
+        <PageMetaTitle />
+        <Head>
         <html lang={state.frontity.lang} />
-        <title>{state.frontity.title}</title>
         <meta name="description" content={state.frontity.description} />
-        <script id="dsq-count-scr" src="https://goiblas.disqus.com/count.js" async /> 
+        { data.isPostType &&  <script id="dsq-count-scr" src="https://goiblas.disqus.com/count.js" async /> }
       </Head>
       <Global styles={ settingsCSS } />
       <Global styles={ globalCSS } />
