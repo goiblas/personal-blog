@@ -1,5 +1,5 @@
 import React from "react";
-import { Global, css, connect, Head, styled } from "frontity";
+import { Global, connect, Head, styled } from "frontity";
 import Header from "./header/header";
 import List from "./list";
 import Post from "./post";
@@ -10,11 +10,17 @@ import Footer from "./footer";
 import settingsCSS from './styles/settings';
 import globalCSS from './styles/globalStyle';
 
+import ReactGA from 'react-ga';
+
 const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   const showList = data.isArchive && !data.isCategory; 
   const show404 = data.is404 || data.isCategory || data.isTaxonomy;
+
+  ReactGA.set({ page: state.router.link });
+  ReactGA.pageview(state.router.link);
+  
   return (
     <>
       <Head>
@@ -25,7 +31,6 @@ const Theme = ({ state }) => {
       </Head>
       <Global styles={ settingsCSS } />
       <Global styles={ globalCSS } />
-
       <Page>
           <Header />
           <main className="main">
