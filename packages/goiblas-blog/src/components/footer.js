@@ -1,12 +1,20 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import { inMobile } from './utils/media-queries';
+import { inDesktop } from './utils/media-queries';
 
-const Footer = ({state}) => {
+const Footer = () => {
   return (
     <FooterContainer className="main-footer">
         <Container>
-            {state.frontity.footer}
+            <PowerBy>
+                Desarrollado con <a rel="noopener noreferrer" href="https://frontity.org/" target="_blank">Frontity</a>
+            </PowerBy>
+            <Social>
+                Me puedes encontrar en:
+                <a className="link" rel="noopener noreferrer" href="https://twitter.com/goiblas" target="_blank">Twitter</a> 
+                <a className="link" rel="noopener noreferrer" href="https://github.com/goiblas" target="_blank">Github</a> 
+                <a className="link" rel="noopener noreferrer" href="https://codepen.io/goiblas/" target="_blank">Codepen</a>              
+            </Social>
         </Container>
     </FooterContainer>
   );
@@ -15,7 +23,7 @@ const Footer = ({state}) => {
 export default connect(Footer);
 const Container = styled.div`
     width: var(--container-percentage);
-    max-width: var(--container-normal);
+    max-width: var(--container-wide);
     border-top: 1px solid var(--color-border);
     margin-left: auto;
     margin-right: auto;
@@ -24,11 +32,25 @@ const Container = styled.div`
     --padding-top: 1;    
     --padding-bottom: 1;
 
-    ${inMobile} {
-        margin-bottom: var(--header-height);
+    margin-bottom: var(--header-height);
+    ${inDesktop} {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0;
     }
 `;
 
+const PowerBy = styled.div`
+    a {
+        margin-left: .1em;
+    }
+`;
+const Social = styled.div`
+    .link {
+        color: var(--color-text);
+        margin-left: .4rem;
+    }
+`;
 const FooterContainer = styled.footer`
     text-align: center;
     --font-size: -.4;

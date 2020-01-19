@@ -98,7 +98,6 @@ h2 {
     max-width: var(--container-wide);
 }
 
-// LINK 
 .link,
 .entry-content a  {
     font-weight: 500;
@@ -125,17 +124,17 @@ h2 {
     background-color: var(--selection); 
 }
 
-// WORDPRESS 
 .aligncenter {
     text-align: center;
 }
 figcaption {
-    --font-size: -.5;
+    --font-size: -.4;
     --line-height: 1;
     font-style: italic;
     color: var(--color-text-light);
     text-align: center;
-    --margin-bottom: 1;
+    --margin-bottom: 1.5;
+    --padding-top: .5;
     width: 100% !important;
 
 }
@@ -153,7 +152,6 @@ img {
     margin: auto;
   }
 
-//   WordPress Core Align Classes 
   @media (min-width: 420px) {
     img.aligncenter,
     img.alignleft,
@@ -178,7 +176,22 @@ img {
     }
   }
 
-// Gist Github code 
+.wp-block-quote {
+    --margin-bottom: 3;
+}
+
+.wp-block-quote p  {
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    --font-size: 1;
+    --line-height: 1.25;
+    --margin-bottom: .25;
+}
+.wp-block-quote cite  {
+    --font-size: -.4;
+    opacity: .8;
+    font-style: normal;
+}
 .gist .highlight * {
     font-size: inherit;
     line-height: inherit;

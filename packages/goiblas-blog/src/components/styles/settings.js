@@ -26,18 +26,15 @@ const fontFaceHeader = css `
 
 const settings = css `    
 :root {
-    //  TYPOGRAFY & RHYTHM
     --base: 13px;
     --scale-factor: .24;
     --space: 21px;
     
-    // FONT FAMILY
     --system-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --header-family: ${HEADER_FONT_FAMILY}, var(--system-family);
     --body-family: ${BODY_FONT_FAMILY}, var(--system-family);
     --code-family: monospace;
     
-    // COLORS
     --color-brand: #30d2f1;
     --color-brand-light: #b1eaf5;
     --color-text: rgba(0, 0, 3, 0.8);
@@ -47,17 +44,14 @@ const settings = css `
     --background-brand: #ffffff;
     --background-brand-dark: #f2f3f5;
     
-    // LAYOUT
     --container-percentage: 92%;
-    --container-wide: 1180px;
+    --container-wide: 889px;
     --container-normal: 720px;
     --header-height: 60px;
 
-    // SHADOW
     --shadow-color: rgba(17, 17, 17, 0.2);
     --shadow-sm: var(--shadow-color) 0 0 2px;
 
-    // SELECTION
     --selection: #FFE7AF;
 }
 
