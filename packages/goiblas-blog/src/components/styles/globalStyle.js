@@ -1,7 +1,7 @@
 import { css } from "frontity";
 
 const globalStyle = css`
-body {
+  body {
     font-family: var(--body-family);
     text-rendering: optimizeLegibility;
     background-color: var(--background-brand);
@@ -10,136 +10,144 @@ body {
     background-position: 0 0;
     font-feature-settings: "kern", "liga", "clig", "calt";
     transition: background-color 500ms;
-}
+  }
 
-*  {
+  * {
     box-sizing: border-box;
-}
+  }
 
-[tabIndex="-1"] {
+  [tabIndex="-1"] {
     outline: 0;
-}
+  }
 
-a {
+  a {
     color: currentColor;
     text-decoration: none;
-}
+  }
 
-img {
+  img {
     max-width: 100%;
     vertical-align: middle;
-}
-strong {
+  }
+  strong {
     font-weight: 600;
-}
-code {
-    background-color: var( --background-brand-dark);
+  }
+  code {
+    background-color: var(--background-brand-dark);
     font-family: var(--system-family);
-}
+  }
 
-pre code {
+  pre code {
     background-color: initial;
-}
+  }
 
-pre {
-    background-color: var( --background-brand-dark);
-    --padding-top: .5;
-    --padding-bottom: .5;
-    --padding-right: .5;
-    --padding-left: .5;    
-}
+  pre {
+    background-color: var(--background-brand-dark);
+    --padding-top: 0.5;
+    --padding-bottom: 0.5;
+    --padding-right: 0.5;
+    --padding-left: 0.5;
+  }
 
-p, ul, ol, pre {
+  p,
+  ul,
+  ol,
+  pre {
     --margin-bottom: 1;
-}
-ul, ol {
+  }
+  ul,
+  ol {
     --padding-left: 1;
-}
+  }
 
-h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--header-family);
     font-weight: 700;
     --font-size: 1;
     --margin-top: 2;
     --margin-bottom: 1;
-}
+  }
 
-h1 {
+  h1 {
     --margin-top: 0;
     --padding-top: 2;
     --font-size: 7;
     --line-height: 2;
-}
+  }
 
-h2 {
+  h2 {
     --font-size: 4;
     --line-height: 1.5;
-}
+  }
 
-@media (min-width: 880px) {
+  @media (min-width: 880px) {
     h1 {
-        --font-size: 5;
-        --line-height: 2.5;
-        --margin-bottom: .5;
+      --font-size: 5;
+      --line-height: 2.5;
+      --margin-bottom: 0.5;
     }
     h2 {
-        --font-size: 2;
-        --line-height: 1.5;
+      --font-size: 2;
+      --line-height: 1.5;
     }
-}
+  }
 
-.entry-content > *:not(.alignfull) {
+  .entry-content > *:not(.alignfull) {
     max-width: var(--container-normal);
     width: var(--container-percentage);
     margin-left: auto;
     margin-right: auto;
-}
-.entry-content > .alignwide {
+  }
+  .entry-content > .alignwide {
     max-width: var(--container-wide);
-}
+  }
 
-.link,
-.entry-content a  {
+  .link,
+  .entry-content a {
     font-weight: 500;
     text-decoration: none;
     border-top: 2px solid transparent;
     border-bottom: 2px solid var(--color-brand);
-    transition: all .1s;
-    border-radius: 1px; 
-}
-.link:hover,
-.entry-content a:hover {
+    transition: all 0.1s;
+    border-radius: 1px;
+  }
+  .link:hover,
+  .entry-content a:hover {
     background-color: var(--color-brand-light);
-    border-color: var(--color-brand-light); 
-}
-    
-.entry-content h2 a {
-    border-bottom: 2px solid transparent; 
-}
+    border-color: var(--color-brand-light);
+  }
 
-::-moz-selection {
-    background-color: var(--selection); 
-}
-::selection {
-    background-color: var(--selection); 
-}
+  .entry-content h2 a {
+    border-bottom: 2px solid transparent;
+  }
 
-.aligncenter {
+  ::-moz-selection {
+    background-color: var(--selection);
+  }
+  ::selection {
+    background-color: var(--selection);
+  }
+
+  .aligncenter {
     text-align: center;
-}
-figcaption {
-    --font-size: -.4;
+  }
+  figcaption {
+    --font-size: -0.4;
     --line-height: 1;
     font-style: italic;
     color: var(--color-text-light);
     text-align: center;
     --margin-bottom: 1.5;
-    --padding-top: .5;
+    --padding-top: 0.5;
     width: 100% !important;
+  }
 
-}
-
-img {
+  img {
     vertical-align: middle;
     object-fit: cover;
     object-position: center;
@@ -175,31 +183,42 @@ img {
       --margin-right: 2;
     }
   }
+  @media (min-width: 620px) {
+    .wp-block-columns {
+      display: flex;
 
-.wp-block-quote {
+      > *:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  .wp-block-quote {
     --margin-bottom: 3;
-}
+  }
 
-.wp-block-quote p  {
+  .wp-block-quote p {
     font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
     --font-size: 1;
     --line-height: 1.25;
-    --margin-bottom: .25;
-}
-.wp-block-quote cite  {
-    --font-size: -.4;
-    opacity: .8;
+    --margin-bottom: 0.25;
+  }
+  .wp-block-quote cite {
+    --font-size: -0.4;
+    opacity: 0.8;
     font-style: normal;
-}
-.gist .highlight * {
+  }
+  .gist .highlight * {
     font-size: inherit;
     line-height: inherit;
-}
-.gist-meta * {
+  }
+  .gist-meta * {
     font-size: inherit;
-} 
+  }
+  .cp_embed_iframe[src*="codepen.io"] {
+    min-height: calc(280px + 30vh);
+  }
 `;
-
 
 export default globalStyle;
