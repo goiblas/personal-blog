@@ -10,7 +10,7 @@
     "dev": "frontity dev",
     "build": "frontity build",
     "serve": "frontity serve",
-    "deploy": "npm run build && npx now --target production"
+    "deploy": "npm run build && npx now --prod"
   },
   "prettier": {},
   "dependencies": {
@@ -22,7 +22,6 @@
     "@frontity/wp-source": "^1.7.0",
     "frontity": "^1.6.0",
     "frontity-goiblas-blog": "./packages/goiblas-blog",
-    "goiblas-disqus-comments": "./packages/comments",
-    "react-ga": "^2.7.0"
+    "goiblas-disqus-comments": "./packages/comments"
   }
 }

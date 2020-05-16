@@ -96,3 +96,5 @@ typings/
 
 # Remove build folder
 build/
+
+.vercel
