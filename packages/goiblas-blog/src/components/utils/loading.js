@@ -17,14 +17,10 @@ const Loading = () => (
 export default Loading;
 
 const Container = styled.div`
-  width: 800px;
+  width: 100%;
   margin: 0;
-  padding: 24px;
+  padding: 48px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & > * {
-    margin-top: 24px;
-  }
 `;
