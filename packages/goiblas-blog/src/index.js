@@ -3,7 +3,7 @@ import image from "@frontity/html2react/processors/image";
 import gistCode from "./processors/gist-code";
 
 const goiblasTheme = {
-  name: "frontity-goiblas-blog",
+  name: "@frontity/mars-theme",
   roots: {
     theme: Theme
   },
