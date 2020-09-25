@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Global, connect, Head, styled } from "frontity";
 import Header from "./header/header";
 import List from "./list";
@@ -10,12 +10,25 @@ import PageMetaTitle from "./page-meta-title";
 
 import settingsCSS from "./styles/settings";
 import globalCSS from "./styles/globalStyle";
+import * as FathomClient from "fathom-client";
 
 const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   const showList = data.isArchive && !data.isCategory;
   const show404 = data.is404 || data.isCategory || data.isTaxonomy;
+
+  useEffect(()=> {
+    if(state.frontity.platform === "client" ) {
+      FathomClient.load("XMXXKTTQ", {
+        includedDomains: ["goiblas.com"],
+      });
+    }
+  }, []);
+
+  if(state.frontity.platform === "client") {
+    FathomClient.trackPageview();
+  }
 
   return (
     <>
