@@ -39,14 +39,17 @@ const globalStyle = css`
 
   pre code {
     background-color: initial;
+    font-family: inherit;
   }
 
   pre {
+    font-family: Courier, Monaco, monospace;
     background-color: var(--background-brand-dark);
     --padding-top: 0.5;
     --padding-bottom: 0.5;
     --padding-right: 0.5;
     --padding-left: 0.5;
+    --font-size: -0.15;
   }
 
   p,
@@ -88,12 +91,12 @@ const globalStyle = css`
   @media (min-width: 880px) {
     h1 {
       --font-size: 5;
-      --line-height: 2.5;
+      --line-height: 2.8;
       --margin-bottom: 0.5;
     }
     h2 {
       --font-size: 2;
-      --line-height: 1.5;
+      --line-height: 1.6;
     }
   }
 

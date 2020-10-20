@@ -64,6 +64,12 @@ const settings = css`
     }
   }
 
+  @media (min-width: 1280px) {
+    :root {
+      --base: 18px;
+      --scale-factor: 0.6;
+    }
+  }
   * {
     font-size: calc(
       var(--base) + (var(--base) * var(--scale-factor) * var(--font-size, 0))
