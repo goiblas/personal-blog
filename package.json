@@ -22,6 +22,7 @@
     "@frontity/wp-source": "^1.8.4",
     "frontity": "^1.11.1",
     "frontity-goiblas-blog": "./packages/goiblas-blog",
-    "goiblas-disqus-comments": "./packages/comments"
+    "goiblas-disqus-comments": "./packages/comments",
+    "react-spinners": "^0.9.0"
   }
 }
