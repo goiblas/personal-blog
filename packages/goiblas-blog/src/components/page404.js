@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { styled } from "frontity";
+import { connect } from "frontity";
 
-const Page404 = () => {
+const Page404 = ({ state }) => {
 
   const titleEl = useRef(null);
   const { focusOnChange } = state.theme;
@@ -26,7 +27,7 @@ const Page404 = () => {
     );
 };
 
-export default Page404;
+export default connect(Page404);
 
 const Container = styled.div`
   --padding-top: 3;

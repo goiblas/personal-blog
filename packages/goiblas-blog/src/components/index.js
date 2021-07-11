@@ -3,7 +3,7 @@ import { Global, connect, Head, styled } from "frontity";
 import Header from "./header/header";
 import List from "./list";
 import Post from "./post";
-import Page404 from "./page404.js";
+import Page404 from "./page404";
 import Loading from "./utils/loading";
 import Footer from "./footer";
 import PageMetaTitle from "./page-meta-title";
