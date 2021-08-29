@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Disqus from 'disqus-react';
-import useInView from '@frontity/hooks/use-in-view';
+import { useInView } from 'react-intersection-observer';
 
 const Comments = ({ state }) => {
     if(state.frontity.platform !== 'client') {
@@ -15,15 +15,15 @@ const Comments = ({ state }) => {
 
     const threadConfig = {
         url: `https://${disqusShortname}.com${state.router.link}`,
-        identifier: post.id,
+        identifier: `${post.id}`,
         title: post.title.rendered,
     };
 
-    const [isVisible, ref] = useInView({ rootMargin: "600px" });
+    const { ref, inView } = useInView({ rootMargin: "600px" });
 
     return (
         <Container ref={ref}> 
-            {isVisible && <Disqus.DiscussionEmbed shortname={disqusShortname} config={threadConfig} />}
+            {inView && <Disqus.DiscussionEmbed shortname={disqusShortname} config={threadConfig} />}
         </Container>
     )
 }
