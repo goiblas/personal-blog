@@ -15,8 +15,6 @@
     "@frontity/html2react": "^1.4.0",
     "fathom-client": "^3.0.0",
     "frontity": "^1.11.1",
-    "react-id-generator": "^3.0.1",
-    "react-spinners": "^0.9.0",
-    "super-react-gist": "^1.0.4"
+    "react-id-generator": "^3.0.1"
   }
 }

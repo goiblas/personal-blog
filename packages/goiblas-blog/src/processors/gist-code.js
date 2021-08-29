@@ -1,4 +1,4 @@
-import Gist from "super-react-gist";
+import Gist from "../components/Gist";
 
 const proccesor = {
   name: "Github gist",
