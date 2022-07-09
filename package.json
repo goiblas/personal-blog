@@ -10,7 +10,7 @@
     "dev": "frontity dev",
     "build": "frontity build",
     "serve": "frontity serve",
-    "deploy": "npm run build && npx now --prod"
+    "deploy": "npm run build && npx vercel --prod"
   },
   "prettier": {},
   "dependencies": {
