@@ -14,15 +14,15 @@
   },
   "prettier": {},
   "dependencies": {
-    "@frontity/components": "^1.8.1",
-    "@frontity/core": "^1.14.3",
+    "@frontity/components": "^1.8.2",
+    "@frontity/core": "^1.16.0",
     "@frontity/hooks": "^2.2.2",
     "@frontity/html2react": "^1.7.0",
     "@frontity/tiny-router": "^1.4.4",
-    "@frontity/wp-source": "^1.11.5",
-    "frontity": "^1.17.0",
+    "@frontity/wp-source": "^1.11.7",
+    "frontity": "^1.17.2",
     "frontity-goiblas-blog": "./packages/goiblas-blog",
     "goiblas-disqus-comments": "./packages/comments",
-    "react-intersection-observer": "^8.32.1"
+    "react-intersection-observer": "^8.34.0"
   }
 }
