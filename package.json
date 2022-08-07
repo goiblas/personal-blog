@@ -23,6 +23,6 @@
     "frontity": "^1.17.2",
     "frontity-goiblas-blog": "./packages/goiblas-blog",
     "goiblas-disqus-comments": "./packages/comments",
-    "react-intersection-observer": "^8.34.0"
+    "react-intersection-observer": "^9.4.0"
   }
 }
